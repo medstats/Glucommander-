@@ -95,7 +95,7 @@ st.set_page_config(
     layout="centered",
 )
 
-st.title("💉 Yale IV Insulin Infusion Calculator")
+st.title("💉 Glucommander IV Insulin Infusion Calculator")
 mode = st.radio(
     "Select calculator mode:",
     ["Start infusion (initial bolus & rate)", "Adjust infusion (ongoing)"]
