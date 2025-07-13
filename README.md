@@ -1,0 +1,1 @@
+# iv-insulin-calculator calculates initial bolus and iv insulin rate from initial blood sugar level. then subsequent rate is calculated by present blood sugar, last blood sugar and last iv insulin rate
