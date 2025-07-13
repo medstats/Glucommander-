@@ -1,6 +1,6 @@
 # iv_insulin_calculator.py
 """
-Streamlit app — Yale IV Insulin Infusion Calculator
+Streamlit app — Glucommander IV Insulin Infusion Calculator
 ---------------------------------------------------
 A small single‑file Streamlit application that implements the bedside Glucommander 
 intravenous insulin protocol (sometimes called the Georgia Hospital IV Insulin Infusion /Davidson algorithm).
@@ -76,7 +76,7 @@ def calc_ongoing_rate(curr_bg: float, prev_bg: float, last_rate: float) -> float
     else:  # delta 1‑39 mg/dL, gentle fall — keep base multiplier
         m = base_m
 
-    # Additional Yale rule for persistent hyperglycaemia --------------
+    # Additional Glucommander rule for persistent hyperglycaemia --------------
     if curr_bg >= 180 and delta <= 10:  # BG high & not falling ≥10 mg/dL
         adaptive_m = last_rate / max(curr_bg - 60, 1) + 0.01
         m = max(m, adaptive_m)
@@ -90,7 +90,7 @@ def calc_ongoing_rate(curr_bg: float, prev_bg: float, last_rate: float) -> float
 # STREAMLIT USER‑INTERFACE LAYOUT
 # =================================
 st.set_page_config(
-    page_title="IV Insulin Infusion (Yale) Calculator",
+    page_title="IV Insulin Infusion Glucommander Calculator",
     page_icon="💉",
     layout="centered",
 )
